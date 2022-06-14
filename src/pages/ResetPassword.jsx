@@ -5,9 +5,14 @@ import "../build/css/app.css";
 
 const ResetPassword = () => {
   const ResetPasswordSchema = Yup.object().shape({
-    email: Yup.string()
-      .email("Email no valid")
-      .required("El email es obligatorio"),
+    password: Yup.string()
+      .required("Este campo es obligatorio")
+      .min(8, "La contraseña debe tener minimo 8 caracteres")
+      .matches(/[a-zA-Z]/, "Password can only contain Latin letters."),
+    confirmpassword: Yup.string().oneOf(
+      [Yup.ref("password"), null],
+      "La contraseña no coincide"
+    ),
   });
 
   return (
@@ -45,7 +50,7 @@ const ResetPassword = () => {
                     name="password"
                   />
                   {errors.password && touched.password ? (
-                    <Alerta>{errors.password}</Alerta>
+                    <p className="alert-senara-error">{errors.password}</p>
                   ) : null}
                 </div>
 
@@ -62,7 +67,9 @@ const ResetPassword = () => {
                     name="confirmpassword"
                   />
                   {errors.confirmpassword && touched.confirmpassword ? (
-                    <Alerta>{errors.password}</Alerta>
+                    <p className="alert-senara-error">
+                      {errors.confirmpassword}
+                    </p>
                   ) : null}
                 </div>
 
