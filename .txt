@@ -1,0 +1,61 @@
+HOJA DE QUEJAS
+Fecha date
+hora time
+Nombre del propietario string
+tel int
+Nombre del arrendatario string
+tel int
+Lugar(proyecto) string
+n de parcela int
+n de toma int
+Exponga su problematica string
+Desde cuando se presenta el problema string
+Lo ha reportado anteriormente string
+Cual ha sido la respueta de la institucion string
+Cual considera usted que se la solucion del problema string
+Cual seria su aporte para solucionar el problema string
+Nombre del quejoso string
+N de cedula string
+Firma idk
+Recibido SENARA idk
+Firma del funcionario idk
+
+import React, {useState} from 'react'
+import "../build/css/app.css"
+
+const ForgetPassword = () => {
+
+  return (
+    <div>
+      <h1>Forget Password</h1>
+      <form >
+        <fieldset>
+          <p>Email</p>
+
+          <input
+            type="text"
+            name="Email"
+            id="Email"
+            placeholder='Digite su correo'
+          ></input>
+          <p></p>
+          <button className='senara-btn-primary btn-center'
+            type="Button"
+            name="Enviar"
+            id="Enviar">Enviar
+          </button>
+        </fieldset>
+      </form>
+    </div>
+  )
+
+  function validarEmail(Email) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(Email)){
+     alert("La dirección de email " + Email+ " es correcta.");
+    } else {
+     alert("La dirección de email es incorrecta.");
+    }
+  }
+}
+
+export default ForgetPassword

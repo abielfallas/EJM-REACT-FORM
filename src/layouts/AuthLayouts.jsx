@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 const AuthLayouts = () => {
     return (
         <>
-            <div>Hola </div>
+            <div>Esto es el layout</div>
             <Outlet />
         </>
     )
