@@ -15,8 +15,26 @@ const ResetPassword = () => {
     ),
   });
 
+  const handleSubmit = async (values) => {
+    console.log(values);
+    // try {
+    //   const url = "http://localhost:4000/clientes";
+    //   const response = await fetch(url, {
+    //     method: "POST",
+    //     body: JSON.stringify(values),
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //   });
+    //   const resultado = await response.json();
+    //   console.log(resultado);
+    // } catch (error) {
+    //   console.log(error);
+    // }
+  };
+
   return (
-    <form>
+    <div>
       <div className="senara-content-login senara-content-sm-login">
         <div className="senara-logo">
           <div className="senara-img-logo"></div>
@@ -86,7 +104,7 @@ const ResetPassword = () => {
       <div className="senara-footer-decoration">
         <div className="decoration-logo"></div>
       </div>
-    </form>
+    </div>
   );
 };
 
